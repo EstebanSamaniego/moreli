@@ -11,7 +11,7 @@ const args = minimist(process.argv)
 const prompt = inquirer.createPromptModule()
 
 async function setup () {
-  // automate the command with "yes"
+  // automate the command with "--yes"
   if (!args.yes) {
     const answer = await prompt([
       {
