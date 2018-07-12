@@ -9,13 +9,19 @@ brew services start postgresql
 ```
 
 # setup
+## utils
+```bash
+cd module-utils
+npm i
+```
+
 ## db
 ```bash
 cd module-db
 chmod +x ./installDB.sh
 ./installDB.sh
 npm i
-npm run setup
+npm run setup -- --yes
 ```
 
 ## application
