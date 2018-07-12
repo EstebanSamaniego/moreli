@@ -14,6 +14,7 @@ brew services start postgresql
 cd module-db
 chmod +x ./installDB.sh
 ./installDB.sh
+npm i
 npm run setup
 ```
 
