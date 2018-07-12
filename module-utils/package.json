@@ -1,0 +1,23 @@
+{
+  "name": "module-utils",
+  "version": "1.0.0",
+  "description": "Program by automate the watering plants - utils",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osvaldojavier14/moreli.git"
+  },
+  "author": "Osvaldo Hinojosa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osvaldojavier14/moreli/issues"
+  },
+  "homepage": "https://github.com/osvaldojavier14/moreli#readme",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "standard": "^11.0.1"
+  }
+}
