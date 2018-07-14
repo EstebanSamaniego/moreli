@@ -24,7 +24,7 @@ npm i
 npm run setup -- --yes
 ```
 
-## application
+## slave
 in progress...
 
 ## frontend (vue)
