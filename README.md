@@ -16,10 +16,15 @@ npm i
 ```
 
 ## db
+Just one once
 ```bash
-cd module-db
 chmod +x ./installDB.sh
 ./installDB.sh
+```
+
+
+```bash
+cd module-db
 npm i
 npm run setup -- --yes
 ```
@@ -31,7 +36,11 @@ in progress...
 in progress...
 
 ## backend (mqtt)
-in progress...
+```bash
+cd module-mqtt
+npm i
+npm run start || npm run start-dev
+```
 
 ## backend (api)
 in progress...
