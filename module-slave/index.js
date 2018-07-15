@@ -19,7 +19,7 @@ const options = {
   }
 }
 
-class MoreliSlave extends EventEmitter {
+class ModuleSlave extends EventEmitter {
   constructor (opts) {
     super()
 
@@ -124,4 +124,4 @@ class MoreliSlave extends EventEmitter {
   }
 }
 
-module.exports = MoreliSlave
+module.exports = ModuleSlave

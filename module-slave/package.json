@@ -1,5 +1,5 @@
 {
-  "name": "moreli-slave",
+  "name": "module-slave",
   "version": "1.0.0",
   "private": true,
   "description": "Program by automate the watering plants - slave",

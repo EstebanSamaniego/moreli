@@ -1,14 +1,14 @@
 
-const MoreliSlave = require('../')
+const ModuleSlave = require('../')
 
-const agent = new MoreliSlave({
+const agent = new ModuleSlave({
   name: 'myapp',
   username: 'admin',
   interval: 2000
 })
 
 agent.addMetric({ position: 'garden', type: 'lemon_tree' }, function () {
-  random = Math.floor(Math.random() * (3 - 1)) + 1
+  let random = Math.floor(Math.random() * (3 - 1)) + 1
   if (random === 1) {
     return 'on'
   }
@@ -16,7 +16,7 @@ agent.addMetric({ position: 'garden', type: 'lemon_tree' }, function () {
 })
 
 agent.addMetric({ position: 'garden', type: 'peach_tree' }, function () {
-  random = Math.floor(Math.random() * (3 - 1)) + 1
+  let random = Math.floor(Math.random() * (3 - 1)) + 1
   if (random === 1) {
     return 'on'
   }
