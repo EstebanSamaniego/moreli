@@ -11,12 +11,12 @@ const EventEmitter = require('events')
 const { parsePayload } = require('module-utils')
 
 const options = {
-  name: 'untitled',
-  username: 'platzi',
+  name: 'lemon_tree',
+  username: 'osvaldo hinojosa',
   interval: 5000,
   mqtt: {
     host: 'mqtt://localhost'
-  }
+  },
 }
 
 class ModuleSlave extends EventEmitter {
@@ -33,7 +33,7 @@ class ModuleSlave extends EventEmitter {
   }
 
   addMetric (payload, fn) {
-    let unique = `[${payload.position}]-${payload.type}`
+    let unique = `[${payload.location}]-${payload.type}`
     this._metrics.set(unique, fn)
     this._metricsValues.set(unique, payload)
   }
@@ -79,8 +79,10 @@ class ModuleSlave extends EventEmitter {
 
               let metricValue = this._metricsValues.get(metric)
               message.metrics.push({
-                position: metricValue.position,
+                location: metricValue.location,
                 type: metricValue.type,
+                category: metricValue.category,
+                board: metricValue.board,
                 value: await Promise.resolve(fn())
               })
             }
@@ -123,5 +125,6 @@ class ModuleSlave extends EventEmitter {
     }
   }
 }
+
 
 module.exports = ModuleSlave

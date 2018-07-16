@@ -7,7 +7,11 @@ module.exports = function setupMetricModel (config) {
   const sequelize = setupDatabase(config)
 
   return sequelize.define('metric', {
-    position: {
+    location: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    category: {
       type: Sequelize.STRING,
       allowNull: false
     },
@@ -15,9 +19,13 @@ module.exports = function setupMetricModel (config) {
       type: Sequelize.STRING,
       allowNull: false
     },
+    board: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
     value: {
       type: Sequelize.TEXT,
       allowNull: false
-    }
+    },
   })
 }

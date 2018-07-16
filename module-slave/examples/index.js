@@ -2,12 +2,21 @@
 const ModuleSlave = require('../')
 
 const agent = new ModuleSlave({
-  name: 'myapp',
-  username: 'admin',
-  interval: 2000
+  name: 'garden',
+  username: 'osvaldo hinojosa',
+  interval: 6000,
 })
 
-agent.addMetric({ position: 'garden', type: 'lemon_tree' }, function () {
+let obj = {
+  location: 'garden', 
+  category: 'valve',
+  type: 'water',
+  board: 'arduino'
+}
+
+// let objCopy
+
+agent.addMetric(obj, function () {
   let random = Math.floor(Math.random() * (3 - 1)) + 1
   if (random === 1) {
     return 'on'
@@ -15,28 +24,31 @@ agent.addMetric({ position: 'garden', type: 'lemon_tree' }, function () {
   return 'off'
 })
 
-agent.addMetric({ position: 'garden', type: 'peach_tree' }, function () {
-  let random = Math.floor(Math.random() * (3 - 1)) + 1
-  if (random === 1) {
-    return 'on'
-  }
-  return 'off'
-})
+// objCopy = Object.assign(obj, { location: 'garden', type: 'peach_tree' })
+// agent.addMetric( objCopy, function () {
+//   let random = Math.floor(Math.random() * (3 - 1)) + 1
+//   if (random === 1) {
+//     return 'on'
+//   }
+//   return 'off'
+// })
 
+// objCopy = Object.assign(objCopy, { location: 'garden', type: 'rss' })
+// agent.addMetric(obj, function getRss () {
+//   return process.memoryUsage().rss
+// })
 
-agent.addMetric({ position: 'garden', type: 'rss' }, function getRss () {
-  return process.memoryUsage().rss
-})
+// objCopy = Object.assign(objCopy, { location: 'garden', type: 'promiseMetric' })
+// agent.addMetric(obj, function getRandomPromise () {
+//   return Promise.resolve(Math.random())
+// })
 
-agent.addMetric({ position: 'garden', type: 'promiseMetric' }, function getRandomPromise () {
-  return Promise.resolve(Math.random())
-})
-
-agent.addMetric({ position: 'garden', type: 'callbackMetric' }, function getRandomCallback (callback) {
-  setTimeout(() => {
-    callback(null, Math.random())
-  }, 1000)
-})
+// objCopy = Object.assign(objCopy, { location: 'garden', type: 'callbackMetric' })
+// agent.addMetric(obj, function getRandomCallback (callback) {
+//   setTimeout(() => {
+//     callback(null, Math.random())
+//   }, 1000)
+// })
 
 agent.connect()
 
